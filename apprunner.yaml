@@ -1,0 +1,20 @@
+version: 1.0
+service:
+  name: hello-gin
+  source:
+    image:
+      repository: 503294267507.dkr.ecr.us-east-1.amazonaws.com/hello-gin
+      tag: latest
+  instanceConfiguration:
+    cpu: 1 vCPU
+    memory: 2 GB
+  healthCheck:
+    path: /
+    interval: 5 seconds
+    timeout: 4 seconds
+    healthyThreshold: 2
+    unhealthyThreshold: 2
+  autoDeploymentsEnabled: true
+  environment:
+    - name: PORT
+      value: "8080"
