@@ -25,6 +25,9 @@ WORKDIR /root/
 # Copy the binary from builder
 COPY --from=builder /app/main .
 
+# Set GIN_MODE to release
+ENV GIN_MODE=release
+
 # Expose port 8080
 EXPOSE 8080
 
