@@ -1,12 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	fmt.Println("Starting application...")
 	// Create a new Gin router
 	r := gin.Default()
 
@@ -30,5 +32,6 @@ func main() {
 	})
 
 	// Run the server on the specified port
+	fmt.Println("Application started successfully")
 	r.Run(":" + port)
 }
