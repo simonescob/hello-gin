@@ -10,9 +10,9 @@ func main() {
 	// Create a new Gin router
 	r := gin.Default()
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "3000"
+	port := "8080"
+	if envPort := os.Getenv("PORT"); envPort != "" {
+		port = envPort
 	}
 
 	// Define a route for the root path
