@@ -1,0 +1,18 @@
+version: 1.0
+resources:
+  - type: service
+    properties:
+      serviceName: my-app-service
+      sourceConfiguration:
+        imageRepository:
+          imageConfiguration:
+            port: "8080"
+        autoDeploymentsEnabled: true
+      instanceConfiguration:
+        cpu: 1024
+        memory: 2048
+      environment:
+        - name: MY_VAR_EXAMPLE
+          value: example
+        - name: APP_PORT
+          value: "8080"
